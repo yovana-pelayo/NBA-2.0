@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 export default function Detail() {
   let { id } = useParams();
   const [character, setCharacter] = useState([]);
-  console.log(character);
 
   useEffect(() => {
     async function getCharacterId() {
@@ -18,10 +17,10 @@ export default function Detail() {
   }, [id]);
   return (
     <div>
-      <ul>
-        <li> {id}</li>
-        <li>{character.name}</li>
-        <li>{character.status}</li>
+      <ul key={id}>
+        {/* <li>Serial Number: {id}</li> */}
+        <li>Name: {character.name}</li>
+        <li>Living Status: {character.status}</li>
         <img src={character.image}></img>
       </ul>
     </div>
