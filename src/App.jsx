@@ -1,4 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
+import Detail from './components/Detail/Detail';
 import List from './components/List/List';
 import Home from './views/Home';
 
@@ -6,9 +7,9 @@ export default function App() {
   return (
     <>
       <Switch>
-        {/* <Route exact path="/detail/:people">
+        <Route exact path="/detail/:id">
           <Detail />
-        </Route> */}
+        </Route>
         <Route exact path="/list">
           <List />
         </Route>

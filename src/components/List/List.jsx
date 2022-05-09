@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 export default function List() {
@@ -8,11 +7,8 @@ export default function List() {
   useEffect(() => {
     async function getCharacters() {
       const res = await fetch('https://rickandmortyapi.com/api/character');
-      console.log('hi, res', res);
       const { results } = await res.json();
-      console.log('results', results);
       setCharacters(results);
-      //   setTimeout(() => {}, 700);
       setLoading(false);
     }
     getCharacters();
@@ -23,10 +19,11 @@ export default function List() {
       <h1>Page that renders list of characters</h1>
       <ul>
         {characters.map((character) => (
-          <li key={character.id}>{character.name}</li>
+          <li key={character.id}>
+            <Link to={`/detail/${character.id}`}>{character.name}</Link>
+          </li>
         ))}
       </ul>
-      {/* <Link to="/detail">Details</Link> */}
     </>
   );
 }
