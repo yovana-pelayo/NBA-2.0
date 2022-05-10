@@ -20,7 +20,7 @@ export default function Detail() {
       <ul key={id}>
         {/* <li>Serial Number: {id}</li> */}
         <li>Name: {character.name}</li>
-        <li>Living Status: {character.status}</li>
+        <li>Living Status: {character.status}!</li>
         <img src={character.image} alt="image"></img>
       </ul>
     </div>
